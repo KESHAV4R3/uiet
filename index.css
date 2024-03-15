@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* splash screen */
+
+.intro {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s;
+}
+
+.logo-header {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+
+}
+
+.log.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+/* welcome name animation */
+
+*, *:before, *:after { 
+    box-sizing: border-box; 
+}
+html { 
+    height: 100%; 
+}
+body {
+    display:          flex;
+    align-items:      center;
+    justify-content:  center;
+    min-height:       100%;
+    background-color: #f5f6f9;
+    font-family: 'Arial', sans-serif; /* Change font theme */
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-container:before {
+    content:  "";
+    position: absolute;
+    top:      calc( 100% - 2px );
+    width:    100%;
+    height:   10px;
+    background-color: #ffffff;
+    transform-origin: center center;
+    transform: scaleX( 0 );
+    
+    animation: line-animation 5s ease forwards; /* Adjust duration to make it slower */
+    animation-delay: 2s;
+}
+
+.logo-container h1 p{
+    user-select: none;
+    color: white;
+}
+
+h1#page-logo {
+    font: bold 6rem 'Arial', sans-serif;
+    color: #000; /* Adjust the color of the logo text */
+    
+    animation: clip-path-reveal-1 5s ease forwards; /* Adjust duration to make it slower */
+    animation-delay: 2s;
+}
+
+@keyframes line-animation {
+    0% { transform: scaleX( 0 ); }
+    15% { transform: scaleX( 0 ); }
+    20%, 25% { transform: scaleX( 1 ); top: calc( 100% - 2px ); }
+    50% { transform: scaleX( 1 ); top: 0px; }
+    70% { transform: scaleX( 0.2 ); top: 0px; }
+    80%, 100% { transform: scaleX( 0.2 ); top: 0px; }
+}
+
+@keyframes clip-path-reveal-1 {
+    0%, 25% { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); }
+    50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+}
+
+.welcome-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #555; /* Adjust the color of the welcome message */
+    opacity: 0; /* Hide initially */
+    animation: pop-forward 1s ease forwards, fade-out 1s ease forwards 4s; /* Pop forward and then fade out */
+}
+
+@keyframes pop-forward {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
