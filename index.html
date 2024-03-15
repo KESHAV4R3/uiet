@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+</head>
+
+<body>
+
+    <!-- introduction splash animation -->
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo text-[100px] font-[800]">UIET Finan</span><span class="logo text-[100px] font-[800]">cial
+                Bank</span>
+        </h1>
+    </div>
+
+    <!-- background video -->
+    <div id="playback" class="absolute overflow-hidden z-[1]">
+        <video width="100%" muted autoplay loop>
+            <source src="../static/assets/123.mp4" type="video/mp4">
+        </video></div>
+
+    <!-- welcome display animation -->
+    <div class="-mt-[400px]">
+        <div class="logo-container absolute z-[2] w-90% m-auto p-10">
+            <h1 id="page-logo">
+                <p class="text-white text-[20px]">YOUR DIGITAL BANKING JOURNEY BEGINS HERE !!!</p>
+            </h1>
+        </div>
+
+        <div class="absolute flex justify-center items-center w-full z-[2] bottom-56 -ml-[240px]">
+
+            <!-- forward movement button -->
+            
+               
+                    <a href="{{ url_for('register') }}" class="w-[800px] h-[130px] relative inline-flex  group">
+                        <div
+                            class="w-[800px] h-[130px] absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-active:opacity-100 group-active:-inset-1 group-active:duration-200 animate-tilt">
+                        </div>
+                        <a href="{{ url_for('register') }}" title="Get quote now"
+                        class="w-[800px] h-[130px] text-[44px] relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                        role="button">Begin's your financial journey
+                     </a>
+                     <!-- <a style="z-index: 10000;" href="{{ url_for('register') }}">
+                        <h1>hellow</h1>
+                     </a> -->
+                     
+                    </a>
+               
+
+        </div>
+    </div>
+
+
+    <!-- java script code -->
+
+    <!-- for intro section -->
+    <script src="../static/app.js"></script>
+
+</body>
+
+</html>
